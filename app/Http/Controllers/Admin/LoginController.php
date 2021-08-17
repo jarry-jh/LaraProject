@@ -29,7 +29,7 @@ class LoginController extends Controller
     }
    
     public function userlogout(Request $req){
-        $req->session()->forget('UserName');
+       Session::forget('UserName');
         return redirect()->route('admin.login.from');
     }
 
