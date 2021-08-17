@@ -21,7 +21,7 @@ class LoginController extends Controller
         
         if($data){
             $adminData=$data->toarray();
-            $req->session()->put('UserName', $adminData['name']);
+            Session::put('UserName', $adminData['name']);
             return redirect()->route('admin.dashboard');
         }else{
             return redirect()->route('admin.login.from')->with('success', 'Wrong Credential');
